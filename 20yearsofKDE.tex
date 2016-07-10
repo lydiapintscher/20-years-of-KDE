@@ -1,0 +1,83 @@
+\documentclass[a5paper,DIV=12,BCOR=9mm,headsepline,headings=small,cleardoubleempty,10pt]{scrbook}
+\usepackage{scrpage2}
+\usepackage{20yearsofKDE}
+\usepackage[utf8]{inputenc}
+\usepackage{textcomp}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{tabularx}
+\usepackage[english]{babel}
+\usepackage[raiselinks=true,
+bookmarks=true,
+bookmarksopenlevel=1,
+bookmarksopen=true,
+bookmarksnumbered=true,
+hyperindex=true,
+plainpages=false,
+pdfpagelabels=true,
+pdfborder={0 0 0.5}
+]{hyperref}
+
+% Meta data
+\newcommand{\booktitle}{20 Years of KDE}
+\newcommand{\booksubtitle}{Past, Present and Future}
+\newcommand{\bookeditor}{Lydia Pintscher}
+\newcommand{\bookyear}{2016}
+\newcommand{\bookisbn}{TODO}
+\newcommand{\bookurl}{http://TODO.org}
+\newcommand{\bookauthors}{Lydia Pintscher, TODO}
+
+\hypersetup{
+  pdfauthor={\bookauthors},
+  pdftitle={\booktitle},
+  pdfsubject={Open Source, Free Software, KDE},
+  pdfkeywords={Open Source, Free Software, KDE},
+  pdflang=en,
+  colorlinks,
+  linkcolor=black,
+  anchorcolor=black,
+  filecolor=black,
+  urlcolor=black,
+  citecolor=black,
+  bookmarksnumbered=true,
+  pdfpagelayout=TwoColumnRight
+}
+\ifusinght
+\else
+  \usepackage{xmpincl}
+  \includexmp{20yearsofKDE}
+  \usepackage{pdfpages}
+\fi
+\hyphenation{pro-ject pro-jects}
+
+\pagestyle{scrheadings}
+\ihead[]{\headmark}
+\ohead[]{\pagemark}
+\ifoot[]{ }
+\ofoot[]{ }
+
+% Use a nicer-Looking design for the TOC
+\usepackage{tocstyle}
+\usetocstyle{KOMAlike}
+
+% Avoid typographical unpleasantries
+\clubpenalty = 10000
+\widowpenalty = 10000
+\displaywidowpenalty = 10000
+% Avoids line-overshooting at the cost of "Word-like" spacing
+\setlength{\emergencystretch}{0.25em}
+
+\begin{document}
+\ifusinght
+\else
+  \includepdf[noautoscale]{frontcover}
+\fi
+\frontmatter
+\input{topmatter}
+\input{foreword}
+\input{thankyou}
+\tableofcontents
+\mainmatter
+\input{closingwords}
+\backmatter
+\end{document}
