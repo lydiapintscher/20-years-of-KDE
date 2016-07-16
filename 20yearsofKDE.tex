@@ -1,5 +1,6 @@
 \documentclass[a5paper,DIV=12,BCOR=9mm,headsepline,headings=small,cleardoubleempty,10pt]{scrbook}
 \usepackage{scrpage2}
+\usepackage[colorinlistoftodos, textsize=tiny]{todonotes}
 \usepackage{20yearsofKDE}
 \usepackage[utf8]{inputenc}
 \usepackage{textcomp}
@@ -23,9 +24,9 @@ pdfborder={0 0 0.5}
 \newcommand{\booksubtitle}{Past, Present and Future}
 \newcommand{\bookeditor}{Lydia Pintscher}
 \newcommand{\bookyear}{2016}
-\newcommand{\bookisbn}{TODO}
-\newcommand{\bookurl}{http://TODO.org}
-\newcommand{\bookauthors}{Lydia Pintscher, TODO}
+\newcommand{\bookisbn}{TODO\todo{add ISBN}}
+\newcommand{\bookurl}{http://TODO.org\todo{add url}}
+\newcommand{\bookauthors}{Lydia Pintscher, TODO\todo{add other authors}}
 
 \hypersetup{
   pdfauthor={\bookauthors},
@@ -73,17 +74,17 @@ pdfborder={0 0 0.5}
   \includepdf[noautoscale]{frontcover}
 \fi
 \frontmatter
+\todo[inline]{finish cover}
 \input{topmatter}
 \input{foreword}
 \input{thankyou}
 \tableofcontents
 \mainmatter
-\part{TODO}
+\part{TODO\todo{add part title}\todo{add more parts}\todo{sort essays to parts}}
 \input{Aracele}
 \input{Albert}
 \input{Boudhayan}
 \input{Aleix}
-\part{TODO}
 \input{Ben}
 \input{Franklin}
 \input{Timothee}
