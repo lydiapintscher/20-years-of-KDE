@@ -1,0 +1,73 @@
+\chapterwithauthor{Sebastian K\"{u}gler}{How we make Plasma}
+
+\authorbio{Sebastian K\"{u}gler is \todo{add bio}}
+
+\noindent{}The KDE project originated from the wish to create a consistent workspace environment that made Linux devices accessible to normal users by offering a graphical interface.
+Since its inception, 20 years ago, the KDE Desktop, nowadays called "Plasma" surpassed this initial goal and today offers one of the most popular workspace user interfaces. In many aspects, it represents the state of the art of computing.
+
+In this article, we are going to have a closer look at various aspects of Plasma, its evolution, how it's used and developed, and why it exists in the first place.
+
+\section*{The User Story}
+
+A desktop is the primary user interface of a computer, it allows to start apps, switch between windows and offers access to configure system-level functions, such as hardware support and the general behaviour of the desktop and software. 20 years ago, KDE was the first of its kind, X11 was still pretty young, and consistency a concept almost unheard of on Linux systems. Developers looked at competitors like SUN Microsystem's CDE, and wanted to offer a modern replacement as Freedom software.
+
+KDE 1 released relatively quickly, given the gargantuan task, and laid the base for many further development. Looking through the code-base, we still often encounter code written 20 years back.
+Today, millions of users around the world rely on Plasma on a daily basis. It's the tool that makes their computer useful. While many users do not particularly care (and that's a good thing: Plasma should be a tool that helps you to get the job done), there's also a large number of people who deeply care, who follow every change developers make and who install new versions with excitement and anticipation.
+
+To many users, Plasma enables them to do what they want, how they want. Plasma's flexibility and configurability is unparalleled, even in proprietary software. Users demand to be met with respect, and do not want to be limited, but rather enabled by the software they use.
+
+Plasma has become a professional tool, today it's used in large enterprises, schools, governmental organisations at different levels. Not long ago, it was even spotted in the control room of the Large Hadron Collider, the biggest and most complex machine in the world.
+
+\subsection*{Development model}
+
+Plasma is developed at a rapid pace. 4 yearly feature releases are followed up by a number of stabilization and translation updates.
+Plasma is developed in a collaborative fashion, based on consensus. There is no single person that decides about features and priorities, but rather a team of maintainers that take decision based on user feedback, consensus and the available resources. Mailing lists, IRC chats and weekly video conferences keep communication channels tight and make sure that problems can be addressed in a timely manner.
+
+This quick succession of releases and cycles is made possible by a huge amount of technology in the background. Every change a developer commits leads to automated builds in different configurations and unit-testing. Feedback about mistakes in the code is automated to ensure a higher quality and less interruption in operation and development. Users who want to follow development closely and help testing can nowadays even get their fix daily in the form of daily updated packages directly from Plasma's git master. Continuous building and integration only makes the rapid development possible.
+Modern tools like git and phabricator help with developer collaboration, and there's a strong culture of code reviews.
+
+Quality has become a central part of the goal of Plasma's development model. A code-base as complex as Plasma and its underlying stack is hard to "get right". Quality problems usually stem from a relatively complex task to solve: users will run Plasma on random hardware, drivers vary in quality. Plasma sits on top of a modular, but complex software stack that is also moving rapidly. It's not always easy to catch up with changes in underlying systems, such as Qt, DBus, the graphics stack, the Linux kernel and its close relatives.
+
+\subsection*{Methods and Tools}
+
+The Plasma team has adopted several modern software engineering practices. Back in the days, the user interface of the KDE Desktop was often designed by the same people who wrote the software. It often simply reflected what the code could do. Nowadays, a team of designers has a say in almost every user-visible change, and larger changes are carefully planned in advance keeping in mind how it solves the user's problem and how it fits into the whole of the software environment.
+On the software development side, test-driven development is making inroads into KDE's and Plasma's development processes. While it's not possible to automatically test every single function call and behavioral expectation, more and more code is covered by a battery of tests that are run regularly. This avoids unintended breakage on the one hand, and speeds up the development by reducing the need for tedious, time-consuming manual testing.
+
+Both, product and project decisions are being taken by the core team of developers, in consensus with a group of designers, other developers and based on user's needs. Product-level decisions are more and more influenced by product-level thinking, although this is a process which is only being adopted within the past years.
+Development happens openly, the central discussion forum is the plasma-devel mailing list. A new project management tool has been adopted in 2015, the Plasma team now uses Phabricator, a web-based collaboration platform to structure tasks, review code and discuss changes in general. Phabricator's git integration presents a clear and logical workflow to get changes developed, reviewed and merged.
+Issue tracking is done in KDE's Bugzilla instance. Most developers have a love and hate relationship to bugzilla, as it can feel a bit like handling a monster. Practically, however, bugzilla's usefulness is pretty much unparalleled, it is a proven tool for software quality assurance that has lead to many user's receiving fixes for their problem. Bugs.kde.org provides a powerful and well-used feedback mechanism, and forms an essential part of the development process.
+
+While traditionally, KDE software was built in a fairly engineer-driven software and user interface design was not always a strong point, user experience experts and interaction designers have become important contributors all over Plasma. Instead of a top-down approach on design and functionality, the user experience experts are embedded in the development process at a deeper level. The development of Plasma 5 has seen an increased focus also on visual quality, it has refined and redefined its design language, without sacrificing flexibility, functionality or negatively impacting technical architecture.
+
+Nowadays, technical quality, visual coherence and smooth interaction design have become equally important. Plasma does not baby, but empower the user to get the work done.
+
+\section*{The Technology Story}
+
+\subsection*{Frameworks, QtQuick and Plasma 5}
+
+In its first three iterations, kdelibs, a monolithic library on top of Qt which shared functional ity and code across KDE applications and the desktop. In its first iterations, KDE was technically a more or less monolithic thing. While it was very powerful from the get-go, it grew organically and eventually became a big and interdependent piece platform on top of Qt. Your editor remembers discussions abou t the scalability limits with this approach already back in 2005. KDE 4 took the first step into a more modular world by coarsely splitting kdelibs into topical libraries. Internally, there were rather big sections of entangled functionality, however. These were finely split up in the development cycle of the fifth iteration of "kdelibs", and first released separately as a consistent set of modules offering more than 50 individual frameworks with a clearly defined dependency structure and backwards compatible future releases in quick cycles with tight quality control. Frameworks 5 has worked out very well from a technology point of view and covers a very wide range of needs, thanks to its modular structure it allows the creation of leaner apps that are smaller in footprint, easier to deploy and load faster.
+
+\subsection*{Devices}
+
+In the Plasma 4 cycle, we have seen the first user interface built for non-desktop devices. An experimental phone UI built with Plasma technology successfully held a phone call as early as 2010. Plasma 5 has been designed for deployment on different devices in mind. Plasma today will on most machines load a desktop UI module and components suitable for use with a mouse, touchpad and keyboard.
+Indeed, the highest priority for Plasma's fifth iteration was to build up the desktop that is functionally equivalent with previous releases, using Frameworks 5. In the same release, the move to QtQuick for the ui components of the workspace has been completed.
+This architecture allows sharing components across devices at multiple levels, and a high degree of code-reuse. It allows to improve the user experience across devices, and in combination a consistent-to-use cross-device experience. The Plasma Phone project, for example, shares roughly 90% of the code with the desktop, without sacrificing usability.
+Reversely, Plasma technology allows to develop applications that work not just on one device, but across a range of devices, adapting its user interface to the hardware used.
+
+\subsection*{Graphics and Wayland}
+
+Looking down the graphics stack, we've finally reached a point where we usually render the entire user interface using hardware acceleration on the graphics card. Smoother graphical effects, better energy efficiency and more CPU resources being available to the applications all make for rather user-visible improvements. Not all is rosy in the graphics world however, and driver problems hurt many users. At the same time, KDE's user base enjoys an incredible variety in hardware and setups, some run it on a small laptops, others on powerful multicore machines connected to a video wall -- all expect Plasma to handle the job gracefully.
+Aside from the workspace, a component that has seen serious modernization over the past years is kwin, Plasma's window manager and compositor. Pluggable hardware and rendering backends, exchangeable user interface elements such as task switchers allow make kwin a very versatile window manager. Over the past years, kwin has gained support for running as a Wayland compositor. It now provides both modes, running on top of an X11 server or starting its own wayland compositor that provides the graphics rendering and input for applications. A Wayland session uses a much leaner graphics stack, protocols which guarantee pixel perfection by using more modern and more clearly defined semantics. Kwin's wayland mode is in fact already used in Plasma Mobile's phone user interface, and its being readied for desktop end users this year.
+
+Developing and maintaining a codebase such as Plasma's is not an easy job, but having the architectural work on modularization behind us, these areas will improve over time as we get more and more fixes into our codebase, upstream and downstream.
+
+
+\section*{Roadmap Story}
+
+For the next years, there are no major architectural changes planned for Plasma -- other than making Plasma available on Wayland. This means that the focus shifts more to user-visible changes. bugfixing, polishing and performance improvements. Additional features can be added without affecting the core thanks to Plasma's modular structure.
+
+Developers want to make Plasma a serious contender for professional use-cases. This means that stability and quality shifts into focus. Indeed, the primary focus of the current development cycle is bugfixing and quality improvements.
+
+In devices-land, Plasma has yet to make inroads. Developers continue to improve the mobile shell and related technology. In the long-run, Plasma could stick to the desktop, which is becoming more and more of a niche market, so it will lead to less relevance overall. The strategy to make Plasma as a technology and as a workspace available also on non-desktop devices will at some point prove essential to the survival of Plasma. Already today, the mobile efforts supplement the desktop by improving performance, footprint and give the codebase much wider testing.
+
+Your editor once said himself: "I want Plasma to help me get my work done so I can go diving": Plasma is not a purpose in itself, but a tool that allows using other tools (your computer, applications) efficiently. It should get out of the way as much as possible, but when needed it should be there and have the right tools available at your fingertips. It should do all this gracefully and elegantly, and give a feel of quality and that I am really using the best tool for this job. Users come for the features and the look, and they stay for the freedom and privacy aspects. Plasma shows excellence in both areas.
