@@ -18,11 +18,11 @@ COVER 	= "frontcover.jpg"
 
 ####### Helpers #######
 
-%.pdf: %.tex
+%.pdf: %.tex *.tex
 	pdflatex $<
 	pdflatex $<
 
-%.html:	%.tex
+%.html:	%.tex *.tex
 	htlatex $< "xhtml,fn-in"
 
 %.epub:	%.html
