@@ -4,9 +4,9 @@
 
 \noindent{}On October 14, 1996 Matthias Ettrich started KDE, with an RFC822 message, the same message format still in use today two decades later, with just minor fixes and extensions for supporting non-ASCII text. We all know this as email.
 
-Shortly after, still in 1996, KDE's own email client, KMail, was started. While it transformed heavily several times in its almost twenty years of history, you can still find traces of its founders in the code today.
+Shortly after, still in 1996, KDE's own email client, KMail, was started. While it mutated heavily several times in its almost twenty years of history, you can still find traces of its founders in the code today.
 
-Email has always been an essential companion of KDE, a lot has changed though, and will continue to change. It is interesting to look at the developments and challenges in this way, as these are also reflected in many other areas of KDE, and beyond.
+Email has always been an essential companion of KDE. A lot has changed though, and will continue to change. It is interesting to look at the developments and challenges in this way, as these are also reflected in many other areas of KDE, and beyond.
 
 \section*{Enabling Access}
 
@@ -16,29 +16,29 @@ Therefore the first challenge was to provide free access to email, both free of 
 
 In the first years of KDE, Free Software as such was not yet universally accepted. On the contrary, it had to face massive opposition, in particular from Microsoft. It took years to prove that Free Software was a development model that could provide high quality and innovative applications, something that is hardly questioned anymore by now. Even Microsoft is contributing actively to Free Software today.
 
-KMail, together with many many other Free Software applications, proved the GPL opponents wrong, having become a competitive product, with some of its innovations such as the missing attachment warning having found their way into many other email clients. And it has found a balance between purism regarding open standards and pragmatism when it comes to compatibility with proprietary applications, still an ongoing discussion in the Free Software world.
+KMail, together with many many other Free Software applications, proved the opponents of the GPL wrong, having become a competitive product, with some of its innovations such as the missing attachment warning having found their way into many other email clients. And it has found a balance between purism regarding open standards and pragmatism when it comes to compatibility with proprietary applications, still an ongoing discussion in the Free Software world.
 
-In order to enable free access to your data, free applications are essential. As the world changes however, this gets challenged over and over again, and free applications are not the only piece in the puzzle anymore.
+In order to enable free access to your data, free applications are essential. As the world changes however, this is challenged over and over again, and free applications are not the only piece in the puzzle any more.
 
 \section*{Clouds}
 
-As computing equipment, and with it email, became more and more ubiquitous, a new challenge arose at the beginning of the century. With the availability of laptops, and later smartphones, email needed to be available on multiple devices simultaneously; the old download model did not work anymore.
+As computing equipment, and email with it, became more and more ubiquitous, a new challenge arose at the beginning of the century. With the availability of laptops, and later smartphones, email needed to be available on multiple devices simultaneously; the old download model did not work anymore.
 
-With the wide-spread availability of permanent internet connectivity in the wake of the dot-com boom, the solution turned out to be server-side storage and online access, an approach that years later became associated with the term “cloud”.
+With the widespread availability of permanent internet connectivity in the wake of the dot-com boom, the solution turned out to be server-side storage and online access, an approach that years later became associated with the term “cloud”.
 
-IMAP, the protocol for server-side email storage and access was standardized, and KMail got support for it. While solving the problem in theory, the limited availability of email providers offering affordable IMAP hosting at the time did not really help though.
+IMAP, the protocol for server-side email storage and access was standardized, and KMail received support for it. While solving the problem in theory, the limited availability of email providers offering affordable IMAP hosting at the time did not really help though.
 
 Instead, advertisement-based webmail providers started to appear and became popular, offering cost-free email hosting with access from a browser, and a few megabytes of storage space. That entire market got swept away with the appearance of Gmail in 2004 though, which offered an (at the time) audacious one gigabyte of storage space, and a stream of innovations in the user interface. Gmail has since become the de-facto standard for consumer email.
 
-The implications of this were not immediately recognized by everyone, the inside perspective tends to be skewed. We understand the risks and implications of the cloud approach (“there is no cloud, just other people's computers”), and we have access to alternatives, but that is not what the average user sees when looking at Gmail. It is a solution to a very real and pressing problem, and even seemingly free of cost.
+The implications of this were not immediately recognized by everyone, and the inside perspective tends to be skewed. We understand the risks and implications of the cloud approach (“there is no cloud, just other people's computers”), and we have access to alternatives, but that is not what the average user sees when looking at Gmail. It is a solution to a very real and pressing problem, and even seemingly free of cost.
 
-KMail of course has dedicated support for Gmail and its various non-standard extensions nowadays. But regarding having control over your own data, is that really the way we envision our communication infrastructure?
+KMail, of course, has dedicated support for Gmail and its various non-standard extensions nowadays. But regarding having control over your own data, is that really the way we envision our communication infrastructure?
 
-How and where data is stored and how it is accessed have become equally important as having a free application to access it, and this is more than providing a Free Software server implementation. We also need to offer solutions for secure and reliable hosting and deployment. “Just run your own email infrastructure” is not a viable solution for most users. Finding convincing and practical answers to this will be an important challenge for the Free Software community in the coming years, KDE included.
+How and where data is stored and how it is accessed have become just as important as having a free application to access it, and this is more than providing a Free Software server implementation. We also need to offer solutions for secure and reliable hosting and deployment. “Just run your own email infrastructure” is not a viable solution for most users. Finding convincing and practical answers to this will be an important challenge for the Free Software community in the coming years, KDE included.
 
 \section*{Small Screens}
 
-In 2007 the iPhone started the age of the smartphones. A year later, Android followed. By 2012 a billion devices had been sold, making a small touch screen with barely more than a ten centimeter diagonal the world's primary communication interface.
+In 2007 the iPhone started the age of the smartphone. A year later, Android followed. By 2012 a billion devices had been sold, making a small touch screen with barely more than a ten centimeter diagonal the world's primary communication interface.
 
 First attempts to give KMail a smartphone-compatible interface happened in 2010, with limited success. The way we organize and use email is inherently tree-based. Folders, message threads and inline conversations can all get deeply nested. Tree-based interfaces however only work poorly on small screens, either being very cumbersome to use or imposing severe restrictions on the nesting depth.
 
@@ -56,7 +56,7 @@ Isolation from broken or malicious applications and straightforward deployment a
 
 On the other hand, application bundles lead to the creation of silos. Data and functionality is only available to a single application, and the rest of the workspace cannot benefit from it.
 
-With KDE being both an application vendor and a platform vendor in this model, KMail is provided\todo{native speaker check - ``faced with''?} with a dilemma. In order to be easy to deploy on the most widely-used platforms (Windows, Android) an application architecture that allows the creation of an application bundle would be needed. On the Plasma workspace however, deep integration would be desirable, providing access to email communication for the entire platform.
+With KDE being both an application vendor and a platform vendor in this model, KMail is faced with with a dilemma. In order to be easy to deploy on the most widely-used platforms (Windows, Android) an application architecture that allows the creation of an application bundle would be needed. On the Plasma workspace however, deep integration would be desirable, providing access to email communication for the entire platform.
 
 KMail has chosen to go “all in” on the platform integration side, with a multi-process architecture enabling data sharing and non-exclusive data access. This is a prerequisite to offering a free and privacy-honoring answer to the personal digital assistants for example.
 
@@ -64,9 +64,9 @@ Other KDE applications are focusing on application bundle compatibility instead.
 
 \section*{Privacy and Freedom}
 
-Providing secure communication can be traced back to the early days of KMail. Support for PGP encryption was added in November 1997, and support for transport encryption followed soon after. Growing interest in security, also in the form of public funding, resulted in the joint Gpg4Win project together with the GnuPG community, with KDE providing the certificate manager Kleopatra.
+Providing secure communication can be traced back to the early days of KMail. Support for PGP encryption was added in November 1997, and support for transport encryption followed soon after. Growing interest in security, also in the form of public funding, resulted in the joint Gpg4Win project together with the GnuPG community, with KDE providing the Kleopatra certificate manager.
 
-In May 2013 Edward Snowden gave the world a glimpse into the extent of global mass surveillance. What were once considered naive assumptions suddenly looked naive\todo{logic}, and unless you took measures to protect it, privacy turned out to be hardly more than an illusion.
+In May 2013 Edward Snowden gave the world a glimpse of the extent of global mass surveillance. What were once considered naive assumptions suddenly looked naive\todo{logic}, and unless you took measures to protect it, privacy turned out to be hardly more than an illusion.
 
 Not only is all your communication intercepted and recorded, it is also automatically analyzed by machine learning algorithms that decide what is “normal” and what is suspicious. You lose your freedom to be different, and uncontrollable machines decide the consequences of that. It has become very apparent that privacy is an essential prerequisite for freedom.
 
